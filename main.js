@@ -1,61 +1,68 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Get references to the SVG elements and toggle button
-    const daySvg = document.getElementById('daySvg');
-    const nightSvg = document.getElementById('nightSvg');
-    const toggleBtn = document.getElementById('toggleBtn');
+    const toggle = document.getElementById('dayNightToggle');
+    const daySection = document.querySelector('.day-section');
+    const nightSection = document.querySelector('.night-section');
+    const titleOverlay = document.querySelector('.title-overlay');
     
-    // Track current state (true = day, false = night)
-    let isDay = true;
-    
-    // Function to toggle between day and night
-    function toggleScene() {
-        if (isDay) {
+    // Toggle switch event handler
+    function handleToggle() {
+        const isNight = toggle.checked;
+        
+        if (isNight) {
             // Switch to night
-            daySvg.classList.remove('active');
-            nightSvg.classList.add('active');
-            toggleBtn.innerHTML = '☀️ Switch to Day';
-            toggleBtn.style.background = 'linear-gradient(45deg, #2c3e50, #4a6741)';
-            isDay = false;
+            daySection.classList.add('hidden');
+            nightSection.classList.add('active');
+            
+            // Update title to "N" for night
+            if (titleOverlay) {
+                titleOverlay.textContent = 'N';
+                titleOverlay.style.color = '#ffffff';
+                titleOverlay.style.textShadow = '2px 2px 10px rgba(0, 0, 0, 0.8)';
+            }
         } else {
             // Switch to day
-            nightSvg.classList.remove('active');
-            daySvg.classList.add('active');
-            toggleBtn.innerHTML = '🌙 Switch to Night';
-            toggleBtn.style.background = 'linear-gradient(45deg, #667eea, #764ba2)';
-            isDay = true;
+            daySection.classList.remove('hidden');
+            nightSection.classList.remove('active');
+            
+            // Update title to "D" for day
+            if (titleOverlay) {
+                titleOverlay.textContent = 'D';
+                titleOverlay.style.color = '#ffffff';
+                titleOverlay.style.textShadow = '2px 2px 10px rgba(0, 0, 0, 0.5)';
+            }
         }
     }
     
-    // Add click event listener to the toggle button
-    toggleBtn.addEventListener('click', toggleScene);
+    // Add event listener to toggle
+    if (toggle) {
+        toggle.addEventListener('change', handleToggle);
+    }
     
-    // Optional: Add keyboard support (spacebar to toggle)
+    // Keyboard support
     document.addEventListener('keydown', function(event) {
-        if (event.code === 'Space') {
-            event.preventDefault(); // Prevent page scroll
-            toggleScene();
+        switch(event.key) {
+            case ' ':
+            case 'Enter':
+                if (event.target !== toggle) {
+                    event.preventDefault();
+                    toggle.checked = !toggle.checked;
+                    handleToggle();
+                }
+                break;
+            case 'ArrowLeft':
+                event.preventDefault();
+                toggle.checked = false;
+                handleToggle();
+                break;
+            case 'ArrowRight':
+                event.preventDefault();
+                toggle.checked = true;
+                handleToggle();
+                break;
         }
     });
     
-    // Optional: Add some interactive hover effects
-    function addHoverEffects() {
-        const svgElements = document.querySelectorAll('.scene-svg');
-        
-        svgElements.forEach(svg => {
-            svg.addEventListener('mouseenter', function() {
-                this.style.transform = this.classList.contains('active') ? 'scale(1.05)' : 'scale(0.95)';
-            });
-            
-            svg.addEventListener('mouseleave', function() {
-                this.style.transform = this.classList.contains('active') ? 'scale(1)' : 'scale(0.9)';
-            });
-        });
-    }
-    
-    // Initialize hover effects
-    addHoverEffects();
-    
-    // Optional: Auto-toggle every 5 seconds (uncomment if desired)
-    // setInterval(toggleScene, 5000);
+    // Initialize the correct state
+    handleToggle();
 });

@@ -3,195 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day & Night Toggle</title>
+    <title>Day Day & Night Scroll Experience Night Toggle Experience</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Day & Night Toggle</h1>
-        
+    <!-- Title Overlay -->
+    <div class="title-overlay">D</div>
+    <!-- Toggle Switch -->
+    <div class="toggle-container">
+        <span class="toggle-label">Day</span>
+        <label class="toggle-switch">
+            <input type="checkbox" id="dayNightToggle" aria-label="Toggle between day and night scenes">
+            <span class="toggle-slider"></span>
+        </label>
+        <span class="toggle-label">Night</span>
+    </div>
+    <!-- Day Section -->
+    <section class="day-section active">
         <div class="svg-container">
-            <!-- Day SVG -->
             <?xml version="1.0" encoding="UTF-8"?>
-            <svg id="daySvg" class="scene-svg active" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1572.73 820.45">
+            <svg id="daySvg" class="scene-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1572.73 820.45">
               <defs>
                 <style>
                   .cls-1 {
                     fill: #f4cfc5;
                   }
-
                   .cls-2 {
                     fill: #a1513b;
                   }
-
                   .cls-3 {
                     fill: #cf9577;
                   }
-
                   .cls-4 {
                     fill: #8e4c46;
                   }
-
                   .cls-5 {
                     fill: url(#linear-gradient-5);
                   }
-
                   .cls-6 {
                     fill: url(#linear-gradient-6);
                   }
-
                   .cls-7 {
                     fill: url(#linear-gradient-4);
                   }
-
                   .cls-8 {
                     fill: url(#linear-gradient-3);
                   }
-
                   .cls-9 {
                     fill: url(#linear-gradient-2);
                   }
-
                   .cls-10 {
                     fill: #8c9aaf;
                   }
-
                   .cls-11 {
                     fill: #8e472b;
                   }
-
                   .cls-12 {
                     fill: url(#linear-gradient);
                   }
-
                   .cls-13 {
                     fill: #678e99;
                   }
-
                   .cls-14 {
                     fill: #3a6c27;
                   }
-
                   .cls-15 {
                     fill: #4c6b73;
                   }
-
                   .cls-16 {
                     fill: #6a8b3d;
                   }
-
                   .cls-17 {
                     fill: #778aa4;
                   }
-
                   .cls-18 {
                     fill: #fcf7fb;
                   }
-
                   .cls-19 {
                     fill: #507d8f;
                   }
-
                   .cls-20 {
                     fill: #7c942f;
                   }
-
                   .cls-21 {
                     fill: #f5e2df;
                   }
-
                   .cls-22 {
                     fill: #c9eefa;
                   }
-
                   .cls-23 {
                     fill: #6ed4f4;
                   }
-
                   .cls-24 {
                     fill: #5b8054;
                   }
-
                   .cls-25 {
                     fill: #a6b03b;
                   }
-
                   .cls-26 {
                     fill: #722d1f;
                   }
-
                   .cls-27 {
                     fill: #607f96;
                   }
-
                   .cls-28 {
                     fill: #be8b7f;
                   }
-
                   .cls-29 {
                     fill: #a05f54;
                   }
-
                   .cls-30 {
                     fill: #f6c8b0;
                   }
-
                   .cls-31 {
                     fill: #b1c346;
                   }
-
                   .cls-32 {
                     fill: #b8b0b7;
                   }
-
                   .cls-33 {
                     fill: #f2e3eb;
                   }
-
                   .cls-34 {
                     fill: #edf9fd;
                   }
-
                   .cls-35 {
                     fill: #cdce64;
                   }
-
                   .cls-36 {
                     fill: #9ddbed;
                   }
-
                   .cls-37 {
                     fill: #849daf;
                   }
-
                   .cls-38 {
                     fill: #92bdcc;
                   }
-
                   .cls-39 {
                     fill: #5aaecc;
                   }
-
                   .cls-40 {
                     fill: #b3c26f;
                   }
-
                   .cls-41 {
                     fill: #d8d794;
                   }
-
                   .cls-42 {
                     fill: #ebbbad;
                   }
-
                   .cls-43 {
                     fill: #a7cfd5;
                   }
-
                   .cls-44 {
                     fill: #90a43f;
                   }
-
                   .cls-45 {
                     fill: #a1a8b8;
                   }
@@ -562,8 +527,10 @@
                   </g>
                 </g>
               </g>
-            </svg>
-                        
+    </section>
+    <!-- Night Section -->
+    <section class="night-section">
+        <div class="svg-container">
             <?xml version="1.0" encoding="UTF-8"?>
             <svg id="nightSvg" class="scene-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1567.55 824.77">
               <defs>
@@ -571,311 +538,234 @@
                   .uuid-299af754-2ccd-4e38-b2ad-d3b2a6f76ffc {
                     fill: #505676;
                   }
-            
                   .uuid-0005f94c-dc2b-4278-8cd4-9e8dfd7a36d0 {
                     fill: #a7afc1;
                   }
-            
                   .uuid-01256993-e96c-4d84-a333-ff555d3d7db8 {
                     fill: #2f4a6b;
                   }
-            
                   .uuid-d8bb5642-b2b6-4b19-8819-33478243fa59 {
                     fill: #fafff5;
                   }
-            
                   .uuid-368bf73c-9611-48a3-abb4-006f34378941 {
                     fill: #596278;
                   }
-            
                   .uuid-352d3346-1b82-4a3c-b0ab-15751972e15a {
                     fill: #b48d70;
                   }
-            
                   .uuid-ee2d645c-a0e1-47d6-9e7e-835e62a66b90 {
                     fill: #9dada3;
                   }
-            
                   .uuid-f9a585ac-4bd7-4a67-8999-77017ed53f0f {
                     fill: #b7b6b8;
                   }
-            
                   .uuid-9c6dd6f8-0a6f-4100-a2e0-4ab672788c00 {
                     fill: url(#uuid-d5705fa6-2808-4187-b63a-cb86755dc114);
                   }
-            
                   .uuid-9521b636-9a60-44b6-a289-ea3160257555 {
                     fill: #fbefcb;
                   }
-            
                   .uuid-2966163f-5733-4ae2-8fce-91f96429275f {
                     fill: #6f9087;
                   }
-            
                   .uuid-da67b065-91f1-43a0-b6c6-7172280e46e3 {
                     fill: #c3c6cf;
                   }
-            
                   .uuid-4cdf347c-ce8c-4308-b602-823cc13f502f {
                     fill: #507e6c;
                   }
-            
                   .uuid-5668e3b2-3e0e-41aa-a96e-8e87e6f33629 {
                     fill: #b7dbe7;
                   }
-            
                   .uuid-5007f9df-1be5-400c-9f20-cf29530479f9 {
                     fill: #727969;
                   }
-            
                   .uuid-eb20714c-bdf9-4978-840f-6f4ee6706091 {
                     fill: url(#uuid-68402a20-c58b-4327-b68b-41a72804c477);
                   }
-            
                   .uuid-d306ac8c-8dd5-4cc6-973a-778c1aef3cba {
                     fill: #43586e;
                   }
-            
                   .uuid-544a74cb-ef96-4186-915d-bce4582f178c {
                     fill: #dcd2a6;
                   }
-            
                   .uuid-be8965be-e6ee-4c59-93f2-9ba267128c66 {
                     fill: #5e5b4f;
                   }
-            
                   .uuid-56f3fa93-bceb-46d1-bf58-8f5a8283a91d {
                     fill: #adc7b6;
                   }
-            
                   .uuid-430fcf42-1399-4a2e-bf0d-33c008f1a66e {
                     fill: #e0e9e0;
                   }
-            
                   .uuid-3edcba4c-2223-4330-8398-8912626328be {
                     fill: #baadaf;
                   }
-            
                   .uuid-6d804d11-2779-4c3f-9825-5dbcc680b164 {
                     fill: #275e45;
                   }
-            
                   .uuid-7a412637-6ea8-4d3a-ac8b-1c1504d85731 {
                     fill: #afb09d;
                   }
-            
                   .uuid-05e29b90-f9e4-42c7-b94d-ae9e92f08a8e {
                     fill: #4f74ab;
                   }
-            
                   .uuid-3822b495-efa5-4379-910d-4fb9804a02c6 {
                     fill: #285856;
                   }
-            
                   .uuid-88743379-a0e2-4da5-9ae3-81f3182a3daa {
                     fill: #1d3142;
                   }
-            
                   .uuid-eab09dd1-b446-45b4-8a31-4fdda1e3a325 {
                     fill: url(#uuid-d9eb673c-58e7-4f0f-9cf8-98aae762c791);
                   }
-            
                   .uuid-f6d30ce4-d937-4e0a-9d89-5efbc6a134d2 {
                     fill: #99c5dd;
                   }
-            
                   .uuid-f4b4a84b-2bb5-4e47-8ffa-399ddfa26828 {
                     fill: #bbc9c4;
                   }
-            
                   .uuid-77228515-fa3e-4119-83d8-55b2e16d3612 {
                     fill: #9bcbd0;
                   }
-            
                   .uuid-38905e6f-c24b-4723-ba08-280dfc2a44c1 {
                     fill: #528485;
                   }
-            
                   .uuid-1feb64a3-3ad0-40c8-aa91-724b953d6c25 {
                     fill: #9b9c9e;
                   }
-            
                   .uuid-885a3095-b0b7-407a-b22e-52f8f0173c3b {
                     fill: #fdfae5;
                   }
-            
                   .uuid-1e99e474-7919-499a-bf7c-c1c1aa34689a {
                     fill: #f5ebdd;
                   }
-            
                   .uuid-19a324cb-2f26-4b37-bd39-ab0904d418fb {
                     fill: #76a580;
                   }
-            
                   .uuid-3e624c9f-3477-49bd-a0d6-b5ac95f4575d {
                     fill: #627d72;
                   }
-            
                   .uuid-b424efca-96ba-4d93-b7f0-1aa513f434d4 {
                     fill: url(#uuid-c93608e9-b84e-4777-b668-bfff56f51698);
                   }
-            
                   .uuid-ef7e82fa-3131-4106-ae6a-e6ef13a515cf {
                     fill: #436579;
                   }
-            
                   .uuid-f7afcb4f-902e-41b4-8888-d76717dee90d {
                     fill: #64799b;
                   }
-            
                   .uuid-6a1fe06b-fcb0-4fc5-87ec-a5ac71593d15 {
                     fill: #587879;
                   }
-            
                   .uuid-f1c1923c-de9e-45a9-8393-cc438ff2aebf {
                     fill: #737981;
                   }
-            
                   .uuid-cf2f9fdf-fdac-4ef0-94c6-a50855c51c60 {
                     fill: #272e4b;
                   }
-            
                   .uuid-fc8f69a4-abbc-418c-9c9e-7bed89386510 {
                     fill: #d9a584;
                   }
-            
                   .uuid-ae825006-d0de-478f-9beb-ec998b814192 {
                     fill: #2c5463;
                   }
-            
                   .uuid-99664e15-0dc1-40b1-836e-63ef0a8dbf1f {
                     fill: #b5c2c8;
                   }
-            
                   .uuid-c36df5c0-cc3c-4e17-b568-6cad8fee29c4 {
                     fill: #dfdcca;
                   }
-            
                   .uuid-23a929f8-5bf0-45ae-8948-859d84200eab {
                     fill: #385f93;
                   }
-            
                   .uuid-dbba4b15-37ff-433a-b58b-1436d156c59a {
                     fill: url(#uuid-05a77757-1c8e-4355-9b7b-57bc1187019a);
                   }
-            
                   .uuid-6d44697a-034b-4c9e-8ba5-c739d09a67f4 {
                     fill: #8babd3;
                   }
-            
                   .uuid-e81cb9f7-7b6c-477f-9317-b97df9d58ca6 {
                     fill: #3d706e;
                   }
-            
                   .uuid-3a9eb066-5e34-4db8-949a-bff2f489d713 {
                     fill: #94aabb;
                   }
-            
                   .uuid-e0c9a1b0-51cc-48fe-9e28-690c9fdc41d6 {
                     fill: #89a395;
                   }
-            
                   .uuid-b3617626-9891-4285-b51d-823dca1bd9a9 {
                     fill: url(#uuid-fd844e0b-e510-44ed-8fef-dde9310db054);
                   }
-            
                   .uuid-708bd2ab-824c-4e42-a1aa-c7bc41cde497 {
                     fill: #608090;
                   }
-            
                   .uuid-c5cf4c60-81ff-4e9e-98cd-71c772ac1beb {
                     fill: url(#uuid-4110a2de-1752-4e0c-a74d-c786c6b5dad1);
                   }
-            
                   .uuid-f52e2504-f57b-44f0-8307-a7ca70ce7e3c {
                     fill: #b88165;
                   }
-            
                   .uuid-78b2f9b3-29fc-4226-a888-14bbb743b3e2 {
                     fill: #3b4363;
                   }
-            
                   .uuid-3dd2c9ea-54c8-442c-8089-4803ff354b50 {
                     fill: #f6f5f4;
                   }
-            
                   .uuid-33f44974-78db-4c72-aac0-e2e2e6237281 {
                     fill: #98b983;
                   }
-            
                   .uuid-f06d9d06-7def-4c95-bebf-bc00c5e1256d {
                     fill: url(#uuid-b433fc94-52cc-4271-9597-70c1a563d5b4);
                   }
-            
                   .uuid-688fbe3e-4876-4be1-80f6-7fe8e8a437d5 {
                     fill: #62966a;
                   }
-            
                   .uuid-37e59c44-c371-4ac2-8331-8a21ffc0b18c {
                     fill: #4c7583;
                   }
-            
                   .uuid-1aea46bc-a481-4ffa-8458-e36106cabcb2 {
                     fill: #a7c0de;
                   }
-            
                   .uuid-77c03ba6-5853-42d1-84e5-c4ebaaabf65d {
                     fill: #c8d7bb;
                   }
-            
                   .uuid-0b5da919-958d-4340-9f56-62bc95f5eae9 {
                     fill: #578b6c;
                   }
-            
                   .uuid-794fb38c-4d0c-41c7-a2e1-c997ae79ca97 {
                     fill: #d5caaf;
                   }
-            
                   .uuid-4623a4c8-f3c2-4cf1-92e6-e62a2f7a07d3 {
                     fill: #efd5ab;
                   }
-            
                   .uuid-b36f9f43-e17f-4b6f-9fc4-fe2d65f314aa {
                     fill: #6f8fbf;
                   }
-            
                   .uuid-b9af4775-93a6-4298-b321-8cfdb7cc6b73 {
                     fill: #cc8f6e;
                   }
-            
                   .uuid-5bb3859b-a465-44de-89df-8fd4390d8e07 {
                     fill: #e0bd9c;
                   }
-            
                   .uuid-9153121b-6c1d-4105-b3df-e2f8de861902 {
                     fill: #e3ecf1;
                   }
-            
                   .uuid-1625a17b-b556-4fa4-8282-9746ec767b7f {
                     fill: #d3d3d3;
                   }
-            
                   .uuid-c55a865e-6a4b-466f-9344-1f7af4983166 {
                     fill: #7386a5;
                   }
-            
                   .uuid-c4519c03-6d61-4109-a8d1-fa4ce09edfa8 {
                     fill: #325f66;
                   }
-            
                   .uuid-c42009fe-1aec-4fad-8269-6aa202557bdd {
                     fill: #1b3b44;
                   }
-            
                   .uuid-a733fa41-e5ae-4800-a716-65f0d2007e1a {
                     fill: #3a7757;
                   }
-            
                   .uuid-657790d9-4e41-4eb4-b719-25e72836f749 {
                     fill: #c7d8eb;
                   }
@@ -1216,12 +1106,7 @@
                   </g>
                 </g>
               </g>
-            </svg>
-        </div>
-        
-        <button id="toggleBtn" class="toggle-button">🌙 Switch to Night</button>
-    </div>
-    
+    </section>
     <script src="main.js"></script>
 </body>
-</html>
+</html> 
